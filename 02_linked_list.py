@@ -110,12 +110,6 @@ class LinkedList(ABC, Generic[T]):
         Постусловие: список пустой
         """
 
-    @abstractmethod
-    def size(self) -> None:
-        """
-        Посчитать количество узлов в списке.
-        """
-
     # Комманды
     # Сводимые к другим операции
     @abstractmethod
@@ -160,6 +154,12 @@ class LinkedList(ABC, Generic[T]):
 
     # Запросы
     # Элементарные
+    @abstractmethod
+    def size(self) -> int:
+        """
+        Посчитать количество узлов в списке.
+        """
+
     @abstractmethod
     def get(self) -> T:
         """
