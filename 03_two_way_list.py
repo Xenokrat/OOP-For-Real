@@ -414,3 +414,7 @@ class TwoWayList(ParentList):
         else:
             self._cursor = self._cursor.left
             self._right_status = self.LEFT_OK
+
+    def get_left_status(self) -> int:
+        """Возвращает статус выполнения команды left"""
+        return self._left_status
