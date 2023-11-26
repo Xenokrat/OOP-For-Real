@@ -21,8 +21,6 @@ class Node(Generic[T]):
         self.left: Self | None = None
         self.right: Self | None = None
 
-# АТД Parent List, в общем, аналогичен АТД из предыдущего занятия
-
 
 class ParentList(ABC, Generic[T]):
     """
@@ -415,4 +413,4 @@ class TwoWayList(ParentList):
             self._left_status = self.LEFT_ERR
         else:
             self._cursor = self._cursor.left
-            self._right_status = self.RIGHT_OK
+            self._right_status = self.LEFT_OK
