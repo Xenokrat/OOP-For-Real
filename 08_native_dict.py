@@ -141,6 +141,7 @@ class NativeDictionary(AbstractNativeDictionary, Generic[T]):
             result = -1
         else:
             result = self._values[res]
+            self._get_status = self.GET_OK
         return result
 
     # Запросы выполнения команд
