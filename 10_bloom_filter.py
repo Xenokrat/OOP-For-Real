@@ -1,7 +1,9 @@
-from typing import Protocol
+from typing import Protocol, TypeVar, Generic
 
 
-class AbsBloomFilter(Protocol):
+T = TypeVar('T')
+
+class AbsBloomFilter(Protocol, Generic[T]):
 
     # Конструктор
     def __init__(self, filter_len: int) -> None:
@@ -11,7 +13,7 @@ class AbsBloomFilter(Protocol):
         ...
 
     # Команды
-    def add(self, string: str) -> None:
+    def add(self, item: T) -> None:
         """
         Постусловие: в битовую маску добавлены значения, соответствующие результату
                      хэширования string
@@ -25,7 +27,7 @@ class AbsBloomFilter(Protocol):
         ...
 
     # Запросы
-    def is_value(self, string: str) -> bool:
+    def is_value(self, item: T) -> bool:
         """Возвращает, принадлежит ли string фильтру"""
         ...
 
